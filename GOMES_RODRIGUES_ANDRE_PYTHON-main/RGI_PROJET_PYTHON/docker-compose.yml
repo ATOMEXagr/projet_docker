@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  flask-app:
+    image: agrandre/python:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    env_file:
+      - .env
+    volumes:
+      - ./DATA_PROJET/BDD_Avec_Donnees.sql:/docker-entrypoint-initdb.d/BDD_Avec_Donnees.sql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+

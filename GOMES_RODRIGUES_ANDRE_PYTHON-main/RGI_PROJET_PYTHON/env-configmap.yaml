@@ -1,0 +1,22 @@
+apiVersion: v1
+data:
+  DB_HOST: db
+  DB_NAME: reservation_rdv_promeo
+  DB_PASSWORD: kiaxceed
+  DB_USER: admin_reservation_flask
+  MAIL_DEFAULT_SENDER: flaskdoodle60@gmail.com
+  MAIL_PASSWORD: ffhu skhs pyxe eyvm
+  MAIL_PORT: "587"
+  MAIL_SERVER: smtp.gmail.com
+  MAIL_USE_TLS: "True"
+  MAIL_USERNAME: flaskdoodle60@gmail.com
+  MYSQL_DATABASE: reservation_rdv_promeo
+  MYSQL_PASSWORD: kiaxceed
+  MYSQL_ROOT_PASSWORD: BG
+  MYSQL_USER: admin_reservation_flask
+  SECRET_KEY: rZ3@j$bC6TaD25
+kind: ConfigMap
+metadata:
+  labels:
+    io.kompose.service: db-env
+  name: env

@@ -1,0 +1,10 @@
+FROM mariadb:10.5
+
+WORKDIR /db
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=reservation_rdv_promeo
+ENV MYSQL_USER=admin_reservation_flask
+ENV MYSQL_PASSWORD=kiaxceed
+
+
+CMD [ "mysqld" ]
